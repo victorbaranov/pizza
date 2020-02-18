@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 
-import { addOrder } from '../actions/action';
+import { addOrder } from '../../actions/action';
 
 import './form-order.css';
 

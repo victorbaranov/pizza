@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import './table.css';
 
-import { getOrders } from '../actions/action';
+import { getOrders } from '../../actions/action';
 
 import TableOutputItem from './TableOutputItem';
 
