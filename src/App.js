@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 
+import store from './reducers/store';
+
+import TableOutput from './TableOutput';
+import FormOfOrder from './FormOfOrder';
+import TableOutputList from './TableOutputList';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Fragment>
+        <section className='wrap-section'>
+          <FormOfOrder />
+        </section>
+
+        <section>
+          <TableOutputList />
+        </section>
+      </Fragment>
+    </Provider>
+
   );
 }
 
