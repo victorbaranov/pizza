@@ -7,21 +7,21 @@ import {
 
 export function uploadSuccess({ data }) {
     return {
-      type: 'UPLOAD_DOCUMENT_SUCCESS',
-      data,
+        type: ADD_ORDER,
+        data,
     };
-  }
-  
-  export function uploadFail(error) {
+}
+
+export function uploadFail(error) {
     return {
-      type: 'UPLOAD_DOCUMENT_FAIL',
-      error,
+        type: 'UPLOAD_DOCUMENT_FAIL',
+        error,
     };
-  }
+}
 
 export const addOrder = ({ file, name }) => {
     let data = new FormData();
-    data.append('file', document);
+    data.append('file', file);
     data.append('name', name);
 
     return (dispatch) => {
@@ -30,3 +30,16 @@ export const addOrder = ({ file, name }) => {
             .catch(error => dispatch(uploadFail(error)))
     };
 };
+
+
+export const getOrders = () => {
+    return (dispatch) => {
+        axios.get(`https://bloggy-api.herokuapp.com/posts`)
+            .then(res => dispatch({
+                type: GET_DATA,
+                payload: res.data
+            }))
+            .catch(err => console.log(err));
+    }
+
+}

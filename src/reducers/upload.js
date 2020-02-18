@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     data: [],
-    order: {},
+    orders: {},
 };
 
 const updateReducer = (state = initialState, action) => {
@@ -20,7 +20,7 @@ const updateReducer = (state = initialState, action) => {
         case ADD_ORDER:
             return {
                 ...state,
-                order: action.payload,
+                orders: action.payload,
             };
 
         default:
