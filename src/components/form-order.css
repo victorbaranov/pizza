@@ -1,0 +1,16 @@
+.output-section{
+    display: block;
+    /* border-radius: 5px; */
+  }
+
+  .fieldset{
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  .button-choose-file{
+    color:red;
+    border:initial;
+    border-radius: 10px;
+
+  }
