@@ -25,7 +25,7 @@ export const addOrder = ({ file, name }) => {
     data.append('name', name);
 
     return (dispatch) => {
-        axios.post('/files', data)
+        axios.post('http://localhost:5000/', data)
             .then(response => dispatch(uploadSuccess(response)))
             .catch(error => dispatch(uploadFail(error)))
     };
@@ -34,7 +34,8 @@ export const addOrder = ({ file, name }) => {
 
 export const getOrders = () => {
     return (dispatch) => {
-        axios.get(`https://bloggy-api.herokuapp.com/posts`)
+        // axios.get(`https://bloggy-api.herokuapp.com/posts`)
+        axios.get(`http://localhost:5000/`)
             .then(res => dispatch({
                 type: GET_DATA,
                 payload: res.data

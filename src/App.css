@@ -1,5 +1,6 @@
 .wrap-section{
-    display: flex;
-    justify-content: center;
+    display: block;
     width: 80%;
+    margin: 0 auto;  
+    margin-left: 17%;
 }

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
-// import './App.css';
+import './App.css';
 
 import store from './reducers/store';
 
