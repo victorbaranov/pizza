@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
+import './table.css';
+
 import { getOrders } from '../actions/action';
 
 import TableOutputItem from './TableOutputItem';

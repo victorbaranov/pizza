@@ -13,7 +13,7 @@ function App() {
   return (
     <Provider store={store}>
       <Fragment>
-        <section className='wrap-section'>
+        <section className='output-section'>
           <FormOfOrder />
         </section>
 
