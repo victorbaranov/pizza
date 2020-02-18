@@ -3,6 +3,6 @@ import updateReducer from './upload';
 import orders from './ordersData';
 
 export default combineReducers({
-  data: updateReducer,
+  updateReducer: updateReducer,
   orders: orders,
 });

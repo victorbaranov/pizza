@@ -6,6 +6,7 @@ import {
 const initialState = {
     data: [],
     orders: {},
+    status:'',
 };
 
 const updateReducer = (state = initialState, action) => {
@@ -20,7 +21,8 @@ const updateReducer = (state = initialState, action) => {
         case ADD_ORDER:
             return {
                 ...state,
-                orders: action.payload,
+                status:'request',
+                // orders: action.payload,
             };
 
         default:
