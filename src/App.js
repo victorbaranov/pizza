@@ -6,19 +6,20 @@ import store from "./reducers/store";
 
 import FormOfOrder from "./components/FormOfOrder/FormOfOrder";
 
-import Loader from "./components/Loader/Loader";
 import TableOutputList from "./components/Table/TableOutputList";
 function App() {
   return (
     <Provider store={store}>
       <Fragment>
-        <section className="output-section">
-          <FormOfOrder />
-        </section>
+        <div className="wrap-section">
+          <section className="output-section">
+            <FormOfOrder />
+          </section>
 
-        <section>
-          <TableOutputList />
-        </section>
+          <section>
+            <TableOutputList />
+          </section>
+        </div>
       </Fragment>
     </Provider>
   );

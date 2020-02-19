@@ -1,0 +1,27 @@
+/* .output-section{
+    display: block;
+  } */
+
+  .fieldset{
+    display: flex;
+    justify-content: center;
+    /* border-radius: 15px; */
+    margin: 10px;
+    width: 80%;
+  }
+
+  .button-choose-file{
+    /* border:initial; */
+    color:rgb(58, 57, 57);
+    border-radius: 5px;
+    width: 220px;
+    display: block;
+  }
+
+  .btn-lable{
+    display: block;
+    border-radius: 1px solid grey;
+  }
+
+
+  
