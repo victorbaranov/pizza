@@ -1,2 +1,4 @@
-export const GET_DATA = 'GET_DATA';
-export const ADD_ORDER = 'ADD_POST';
+export const GET_DATA = "GET_DATA";
+export const ADD_ORDER_REQUEST = "ADD_ORDER_REQUEST";
+export const ADD_ORDER_SUCCESS = "ADD_ORDER_SUCCESS";
+export const ADD_ORDER_FAIL = "ADD_ORDER_FAIL";

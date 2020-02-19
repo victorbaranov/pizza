@@ -1,18 +1,28 @@
 import axios from "axios";
 
-import { GET_DATA, ADD_ORDER } from "./type";
+import {
+  GET_DATA,
+  ADD_ORDER_FAIL,
+  ADD_ORDER_REQUEST,
+  ADD_ORDER_SUCCESS
+} from "./type";
 
-export function uploadSuccess({ data }) {
+export function orderRequest() {
   return {
-    type: ADD_ORDER,
-    data
+    type: ADD_ORDER_REQUEST
+  };
+}
+export function orderSuccess({ data }) {
+  return {
+    type: ADD_ORDER_SUCCESS,
+    payload: data
   };
 }
 
-export function uploadFail(error) {
+export function orderFail({ message }) {
   return {
-    type: "UPLOAD_DOCUMENT_FAIL",
-    error
+    type: ADD_ORDER_FAIL,
+    payload: message
   };
 }
 
@@ -22,10 +32,11 @@ export const addOrder = ({ file, name }) => {
   data.append("name", name);
 
   return dispatch => {
+    dispatch(orderRequest());
     axios
       .post("http://localhost:8080/", data)
-      .then(response => dispatch(uploadSuccess(response)))
-      .catch(error => dispatch(uploadFail(error)));
+      .then(response => dispatch(orderSuccess(response)))
+      .catch(error => dispatch(orderFail(error)));
   };
 };
 
