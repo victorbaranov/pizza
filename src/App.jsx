@@ -6,19 +6,18 @@ import store from './reducers/store';
 
 import FormOfChoice from './components/formOfChoice/FormOfChoice';
 import TableOutputList from './components/tableOutput/TableOutputList';
-function App() {
 
-
+const App = () => {
 
   return (
     <Provider store={store}>
       <Fragment>
         <div className='wrap-section'>
-          <section className='output-section'>
+         
             <FormOfChoice />
-          </section>
+          
 
-          <section>
+          <section className='wrap-table'>
             <TableOutputList />
           </section>
 
@@ -26,6 +25,6 @@ function App() {
       </Fragment>
     </Provider>
   );
-}
+};
 
 export default App;

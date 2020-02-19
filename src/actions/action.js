@@ -1,46 +1,56 @@
-import axios from 'axios';
-
 import {
     GET_DATA,
-    ADD_ORDER
-} from './type';
+    ADD_ORDER_FAIL,
+    ADD_ORDER_REQUEST,
+    ADD_ORDER_SUCCESS
+  } from "./types";
 
-export function uploadSuccess({ data }) {
+  import axios from 'axios'
+  
+  export function orderRequest() {
     return {
-        type: ADD_ORDER,
-        data,
+      type: ADD_ORDER_REQUEST
     };
-}
+  };
 
-export function uploadFail(error) {
+  export function orderSuccess({ data }) {
     return {
-        type: 'UPLOAD_DOCUMENT_FAIL',
-        error,
+      type: ADD_ORDER_SUCCESS,
+      payload: data
     };
-}
-
-export const addOrder = ({ file, name }) => {
+  };
+  
+  export function orderFail({ message }) {
+    return {
+      type: ADD_ORDER_FAIL,
+      payload: message
+    };
+  }
+  
+  export const addOrder = ({ file, name }) => {
     let data = new FormData();
-    data.append('file', file);
-    data.append('name', name);
-
-    return (dispatch) => {
-        axios.post('http://localhost:5000/', data)
-            .then(response => dispatch(uploadSuccess(response)))
-            .catch(error => dispatch(uploadFail(error)))
+    data.append("file", file);
+    data.append("name", name);
+  
+    return dispatch => {
+      dispatch(orderRequest());
+      axios
+        .post("http://localhost:5000/", data)
+        .then(response => dispatch(orderSuccess(response)))
+        .catch(error => dispatch(orderFail(error)));
     };
-};
-
-
-export const getOrders = () => {
-    return (dispatch) => {
-        // axios.get(`https://bloggy-api.herokuapp.com/posts`)
-        axios.get(`http://localhost:5000/`)
-            .then(res => dispatch({
-                type: GET_DATA,
-                payload: res.data
-            }))
-            .catch(err => console.log(err));
-    }
-
-}
+  };
+  
+  export const getOrders = () => {
+    return dispatch => {
+      axios
+        .get(`http://localhost:5000/`)
+        .then(res =>
+          dispatch({
+            type: GET_DATA,
+            payload: res.data
+          })
+        )
+        .catch(err => console.log(err));
+    };
+  };

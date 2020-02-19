@@ -1,6 +1,8 @@
 .wrapp-loader{
   display: flex;
   justify-content: center;
+  align-items: center;
+  /* width: 300px; */
 }
 .lds-ellipsis {
     display: inline-block;
@@ -56,4 +58,8 @@
     100% {
       transform: translate(24px, 0);
     }
+  }
+
+  .wrap-table {
+    margin: 0 auto;
   }
