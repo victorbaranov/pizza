@@ -34,7 +34,7 @@ export const addOrder = ({ file, name }) => {
   return dispatch => {
     dispatch(orderRequest());
     axios
-      .post("http://localhost:8080/", data)
+      .post("http://localhost:5000/", data)
       .then(response => dispatch(orderSuccess(response)))
       .catch(error => dispatch(orderFail(error)));
   };
@@ -43,7 +43,7 @@ export const addOrder = ({ file, name }) => {
 export const getOrders = () => {
   return dispatch => {
     axios
-      .get(`http://localhost:8080/`)
+      .get(`http://localhost:5000/`)
       .then(res =>
         dispatch({
           type: GET_DATA,
