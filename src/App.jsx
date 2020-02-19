@@ -11,18 +11,18 @@ function App() {
   return (
     <Provider store={store}>
       <Fragment>
-        <div className="wrap-section">
-          <section className="output-section">
-            <FormOfOrder />
-          </section>
+        <div className='wrap-section'>
+         
+            <FormOfChoice />
+          
 
-          <section>
+          <section className='wrap-table'>
             <TableOutputList />
           </section>
         </div>
       </Fragment>
     </Provider>
   );
-}
+};
 
 export default App;
