@@ -4,18 +4,15 @@ import "./App.css";
 
 import store from "./reducers/store";
 
-import FormOfOrder from "./components/FormOfOrder/FormOfOrder";
+import FormOfChoice from "./components/formOfChoice/FormOfChoice";
 
-import TableOutputList from "./components/Table/TableOutputList";
-function App() {
+import TableOutputList from "./components/tableOutput/TableOutputList";
+const App = () => {
   return (
     <Provider store={store}>
       <Fragment>
         <div className='wrap-section'>
-         
-            <FormOfChoice />
-          
-
+          <FormOfChoice />
           <section className='wrap-table'>
             <TableOutputList />
           </section>

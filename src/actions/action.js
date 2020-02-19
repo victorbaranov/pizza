@@ -5,7 +5,7 @@ import {
   ADD_ORDER_FAIL,
   ADD_ORDER_REQUEST,
   ADD_ORDER_SUCCESS
-} from "./type";
+} from "./types";
 
 export function orderRequest() {
   return {
