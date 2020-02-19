@@ -77,9 +77,10 @@ const TableOutputList = () => {
             <span>Дата и время ответа от сервера</span>
           </th>
         </tr>
-        {ordersHard.map(order => (
-          <TableOutputItem order={order} key={`order-${order.id}`} />
-        ))}
+        {orders &&
+          orders.map(order => (
+            <TableOutputItem order={order} key={`order-${order.id}`} />
+          ))}
       </tbody>
     </table>
   );

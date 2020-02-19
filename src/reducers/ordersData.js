@@ -28,7 +28,7 @@ const orders = (state = initialState, action) => {
     case ADD_ORDER_SUCCESS:
       return {
         ...state,
-        orders: [...orders, action.payload],
+        orders: [...state.orders, action.payload],
         loading: false
       };
 
